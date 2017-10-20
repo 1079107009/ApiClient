@@ -1,5 +1,7 @@
 package com.lp.apiclient;
 
+import com.lp.apiclient.entity.HttpResult;
+
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.annotations.NonNull;
@@ -16,14 +18,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HttpMethods {
 
-    public static final String BASE_URL = "https://api.douban.com/v2/movie/";
-
     private static final int DEFAULT_TIMEOUT = 5;
 
     private Retrofit retrofit;
-    private MovieService movieService;
 
-    //构造方法私有
+    /**
+     * 构造方法私有
+     */
     private HttpMethods() {
         //手动创建一个OkHttpClient并设置超时时间
         OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
@@ -38,12 +39,22 @@ public class HttpMethods {
 
     }
 
-    //在访问HttpMethods时创建单例
+    /**
+     * 在访问HttpMethods时创建单例
+     */
     private static class SingletonHolder {
+
         private static final HttpMethods INSTANCE = new HttpMethods();
+
+        private SingletonHolder() {
+        }
     }
 
-    //获取单例
+    /**
+     * 获取单例
+     *
+     * @return
+     */
     public static HttpMethods getInstance() {
         return SingletonHolder.INSTANCE;
     }

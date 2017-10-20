@@ -1,7 +1,9 @@
-package com.lp.apiclient;
+package com.lp.apiclient.entity;
 
 /**
- * Created by LiPin on 2017/10/19 11:20.
+ *
+ * @author LiPin
+ * @date 2017/10/19 11:20
  * 描述：
  */
 
