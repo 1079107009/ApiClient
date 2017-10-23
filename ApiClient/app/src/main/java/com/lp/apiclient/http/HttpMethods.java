@@ -27,7 +27,7 @@ public class HttpMethods {
 
     private static final int DEFAULT_TIMEOUT = 5;
     private static final String BASE_URL = "https://api.douban.com/";
-    private static final long DEFAULT_CACHE_SIZE = 1024L;
+    private static final long DEFAULT_CACHE_SIZE = 1024 * 1024 * 2L;
 
     private Retrofit retrofit;
     private volatile static HttpMethods instance;

@@ -1,5 +1,7 @@
 package com.lp.apiclient.entity;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * @author LiPin
  * @date 2017/10/19 11:20
@@ -19,6 +21,7 @@ public class HttpResult<T> {
     private int total;
     private String title;
 
+    @SerializedName("subjects")
     private T data;
 
     public int getResultCode() {
