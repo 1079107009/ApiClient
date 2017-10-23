@@ -1,7 +1,6 @@
 package com.lp.apiclient.entity;
 
 /**
- *
  * @author LiPin
  * @date 2017/10/19 11:20
  * 描述：
@@ -9,7 +8,10 @@ package com.lp.apiclient.entity;
 
 public class HttpResult<T> {
 
-    private int resultCode;
+    public static final int FAILURE = 0;
+    public static final int SUCCESS = 200;
+
+    private int resultCode = 200;
     private String resultMessage;
 
     private T data;
