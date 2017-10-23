@@ -44,7 +44,7 @@ public class RxUtil {
     public static <T> Function<HttpResult<T>, T> handleHttpResult() {
         return new Function<HttpResult<T>, T>() {
             @Override
-            public T apply(@NonNull HttpResult<T> httpResult) {
+            public T apply(@NonNull HttpResult<T> httpResult) throws Exception {
                 if (httpResult.getResultCode() != HttpResult.SUCCESS) {
                     throw new ApiException(httpResult.getResultCode(), httpResult.getResultMessage());
                 }

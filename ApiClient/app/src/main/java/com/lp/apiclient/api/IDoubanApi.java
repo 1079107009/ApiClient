@@ -1,7 +1,9 @@
 package com.lp.apiclient.api;
 
 import com.lp.apiclient.entity.HttpResult;
-import com.lp.apiclient.entity.Subjects;
+import com.lp.apiclient.entity.Subject;
+
+import java.util.List;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -20,6 +22,6 @@ public interface IDoubanApi {
      * @return
      */
     @GET("/v2/movie/in_theaters")
-    Observable<HttpResult<Subjects>> inTheaters();
+    Observable<HttpResult<List<Subject>>> inTheaters();
 
 }
